@@ -5,21 +5,25 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LandGen extends Application{
-	
+
+	private static final Logger LOG = Logger.getLogger(LandGen.class.getName());
+
 	int water = 75; //Water height
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
+
 	public void start(Stage theStage) {
 		/*Set map x and y limit and number of prome nodes. The
 		 * more prime nodes the more sporadic
 		 */
 		Map myMap = new Map(300,300,30);
-		
+
 		theStage.setTitle( "Map Gen" );
         
 	    Group root = new Group();
@@ -44,5 +48,7 @@ public class LandGen extends Application{
 	    }
 	         
 	    theStage.show();
+
+		LOG.log(Level.FINE, "myMap: {0}", myMap);
     }
 }
