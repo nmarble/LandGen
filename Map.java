@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Map {
 	private int xSize;
@@ -75,10 +76,14 @@ public class Map {
 			nodes.add(new Node(x,y,h));
 		}
 	}
-	private void printMap() {
-		for (Node node : nodes) {
-			node.printInfo();
-		}
+
+	@Override
+	public String toString() {
+		return "Map{" +
+				"xSize=" + xSize +
+				", ySize=" + ySize +
+				", nodes=" + nodes.stream().map(Object::toString).collect(Collectors.joining("\n")) +
+				", maxHeight=" + maxHeight +
+				'}';
 	}
-	
 }

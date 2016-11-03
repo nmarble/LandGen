@@ -5,8 +5,13 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LandGen extends Application{
+
+	private static final Logger LOG = Logger.getLogger(LandGen.class.getName());
+
 	int water = 75;
 	public static void main(String[] args) {
 		
@@ -39,5 +44,7 @@ public class LandGen extends Application{
 	    }
 	         
 	    theStage.show();
+
+		LOG.log(Level.FINE, "myMap: {0}", myMap);
     }
 }

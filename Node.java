@@ -11,9 +11,16 @@ public class Node {
 	public int getX() { return x;}
 	public int getY() { return y;}
 	public double getHeight() { return height;}
-	public void printInfo() {
-		System.out.format("X: %d Y: %d H: %f\n", x, y, height);
+
+	@Override
+	public String toString() {
+		return "Node{" +
+				"x=" + x +
+				", y=" + y +
+				", height=" + height +
+				'}';
 	}
+
 	public double getDistance(Node node) {
 		return Math.sqrt(Math.pow((node.getX() - x), 2) + Math.pow((node.getY() - y), 2)); 
 	}
