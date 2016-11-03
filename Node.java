@@ -8,8 +8,15 @@ public class Node {
 		this.y = y;
 		height = h;
 	}
+	public Node(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
 	public int getX() { return x;}
 	public int getY() { return y;}
+	public void setHeight(double h) {
+		height = h;
+	}
 	public double getHeight() { return height;}
 
 	@Override
